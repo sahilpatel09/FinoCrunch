@@ -1,6 +1,11 @@
 <template>
-  <div class="flex flex-row items-center justify-center">
-    <div class="container bg-slate-800 w-96 m-12 flex flex-col items-center shadow-2xl pt-4 pb-4">
+  <div class="flex flex-col justify-center items-center w-screen h-screen">
+    <div class="">
+      
+      <div class="flex flex-col rounded items-center justify-center px-40 py-14
+      w-auto sm:shadow-2xl">
+        
+      
       <img src="../assets/logo-dark.png" alt="" class="w-40 mt-4">
       <h2 class="font-serif text-4xl antialiased font-bold">FinoCrunch</h2>
       <p class="text-md text-slate-50">Record Everything important.</p>
@@ -10,7 +15,7 @@
         <span>Continue with Google</span>
       </button>
 
-      <button class="mt-1 border-2 border-slate-500 px-8 py-2 flex flex-row items-center gap-2 w-64">
+      <button class="mt-1 border-2 border-slate-900 px-8 py-2 flex flex-row items-center gap-2 w-64">
         <img src="https://www.evernote.com/redesign/OpenID/img/apple-logo_20.svg" class="">
         <span>Continue with Apple</span>
       </button>
@@ -26,6 +31,8 @@
       </div>
 
       <input type="email" name="email" class="w-64 border-2 p-2 rounded mt-4" placeholder="Email address or username" />
+      <input type="password" name="password" class="w-64 border-2 p-2 rounded mt-4" placeholder="Password" />
+
       <button class="bg-indigo-500 text-white w-64 p-2 mt-2 rounded">Continue</button>
 
       <div class="mt-1 px-4 py-2 flex flex-row items-center gap-2 w-64">
@@ -44,7 +51,7 @@
       
 
 
-
+      </div>
     </div>
   </div>
 

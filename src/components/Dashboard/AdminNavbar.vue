@@ -11,7 +11,7 @@
               group-hover:bg-blue-800
             "
         >
-          <img src="../assets/logo-white.png" alt="" class="w-6">
+          <img src="../../assets/logo-white.png" alt="" class="w-6">
         </div>
         <p class="text-sm font-light">
           <span class="uppercase">Dashboard</span>
@@ -295,7 +295,7 @@
                 tracking-wider
               "
           >
-            Derol Hakim
+            Sahil Patel
           </a>
         </li>
         <li>
@@ -334,7 +334,7 @@
               group-hover:bg-blue-800
             "
         >
-          <img class="w-6" src="../assets/logo-white.png" />
+          <img class="w-6" src="../../assets/logo-white.png" />
         </div>
         <p class="text-sm font-light">
           <span class="uppercase">

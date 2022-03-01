@@ -33,7 +33,7 @@ const routes = [
     children: [
       {
         path: "/admin/dashboard",
-        component: () => import(/* webpackChunkName: "about" */ '../components/MainScreen.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/Dashboard/MainScreen.vue'),
       },
       {
         path: "transactions",

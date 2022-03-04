@@ -3,11 +3,31 @@
     class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 px-4 xl:p-0 gap-y-4 md:gap-6 mt-4"
   >
     <div class="md:col-span-2 xl:col-span-2 bg-gray-900 p-6 rounded-2xl">
+      <div class="flex justify-between items-center">
       <h2
           class="text-xs md:text-sm text-gray-400 font-bold tracking-wide md:tracking-wider pl-1"
       >
         Expenses By Category
       </h2>
+      <a
+          href="#"
+          class="
+                  px-4
+                  py-2
+                  text-lg
+                  text-white
+                  rounded
+                  xuppercase
+                  tracking-wider
+                  font-semibold
+                  bg-gray-800
+                  text-gray-300
+                "
+          @click="this.$store.commit('toggleAddCategory')"
+      >+</a
+      >
+      </div>
+
 
       <div class="space-y-3">
         <div class="bg-greyish p-6 rounded-xl mt-6">
@@ -192,24 +212,21 @@
                   bg-gray-800
                   text-gray-300
                 "
-              @click="this.$store.state.addTransactionOpen = !this.$store.state.addTransactionOpen"
+              @click="this.$store.commit('toggleAddTransaction')"
           >+</a
           >
         </div>
-        <ul class="overflow-x-auto w-full">
+        <ul class="overflow-x-auto">
           <li
-              class="py-3 flex justify-between text-sm text-gray-300 font-semibold bg-gray-800 rounded-b-md mb-2"
+              class="w-full py-3 flex justify-between text-sm text-gray-300 font-semibold bg-gray-800 rounded-b-md mb-2"
               v-for="index in 10"
               :key="index"
           >
             <p class="px-4 text-gray-400">Shopping</p>
             <p class="px-4 font-semibold">26th January, 2020</p>
-
-
-
             <p class="px-4 text-blue-600">Grocery</p>
-            <p class="px-4 tracking-wider">Card</p>
-            <p class="px-8 text-gray-100">$45</p>
+            <p class="px-4 bg-gray-800">Card</p>
+            <p class="px-4 text-gray-100">$45</p>
           </li>
         </ul>
       </div>

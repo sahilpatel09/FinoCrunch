@@ -16,7 +16,7 @@
                   bg-gray-800
                   text-gray-300
                 "
-           @click="this.$store.state.addTransactionOpen = !this.$store.state.addTransactionOpen"
+           @click="this.$store.commit('toggleAddTransaction')"
         >X</a>
       </div>
 
@@ -66,6 +66,54 @@
 
 
     </PopUp>
+
+<!--############################################################-->
+
+    <PopUp v-if="this.$store.state.addCategoryOpen" class="fade-in">
+
+      <div class="flex justify-between items-center">
+        <h2 class="text-gray-300 font-semibold">Add a Category</h2>
+        <a href="#" class="
+                  px-4
+                  py-0.5
+                  text-lg
+                  text-white
+                  rounded
+                  xuppercase
+                  tracking-wider
+                  font-semibold
+                  bg-gray-800
+                  text-gray-300
+                "
+           @click="this.$store.commit('toggleAddCategory')"
+        >X</a>
+      </div>
+
+      <div class="flex flex-col space-y-3 text-gray-400">
+
+        <label class="sr-only">Category Name</label>
+        <input type="text" class="bg-greyish rounded p-2" v-model="txnCategory.name"/>
+
+        <div class="flex justify-between gap-4">
+          <img :src="txnCategory.iconUrl" alt="" class="w-10">
+          <label class="sr-only">Payment Type</label>
+          <select id="payment_type" class="w-full bg-greyish rounded p-2" v-model="txnDetails.payment_type">
+            <option>Select Payment Type</option>
+            <option>Cash</option>
+            <option>Card</option>
+            <option>UPI</option>
+            <option>PayPal</option>
+          </select>
+        </div>
+
+
+        <a href="#" class="bg-indigo-900 py-2 rounded text-center">Add New Category</a>
+
+      </div>
+
+
+
+    </PopUp>
   </div>
 </template>
 
@@ -88,6 +136,10 @@ export default {
         category: "Food",
         payment_type: "Cash",
         amount: 560,
+      },
+      txnCategory: {
+        name: "Category Name",
+        iconUrl: "https://cdn-icons.flaticon.com/png/512/1078/premium/1078403.png?token=exp=1646397723~hmac=e5c0f53fdb3817c1fa87a8078876ee94"
       }
 
     }

@@ -27,7 +27,7 @@
               v-on:click="txnOpen = !txnOpen"
           class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-800 flex gap-2 items-center"
           >
-            Transactions
+            Data
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-4 h-4 stroke-current stroke-2 text-gray-100 hover:text-gray-800 transform duration-500 ease-in-out"
@@ -109,7 +109,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Transaction GHI
+                Transactions
               </a>
             </li>
           </ul>

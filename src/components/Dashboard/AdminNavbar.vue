@@ -24,8 +24,8 @@
         </li>
         <li class="relative">
           <a
-            v-on:click="txnOpen = !txnOpen"
-            class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-800 flex gap-2 items-center"
+              v-on:click="txnOpen = !txnOpen"
+          class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-800 flex gap-2 items-center"
           >
             Transactions
             <svg
@@ -44,10 +44,8 @@
               />
             </svg>
           </a>
-          <ul
-            class="absolute top-10 left-0 bg-white p-4 rounded-md shadow overflow-hidden w-64 transition duration-300"
-            :class="{ hidden: txnOpen }"
-          >
+          <ul class="absolute top-10 left-0 bg-white p-4 rounded-md shadow overflow-hidden w-64 transition duration-300"
+            :class="{ hidden: txnOpen }">
             <li>
               <a
                 href="#"
@@ -67,7 +65,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Transaction ABC
+                Budget
               </a>
             </li>
             <li>
@@ -89,7 +87,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Transaction DEF
+                Payments
               </a>
             </li>
             <li>
@@ -118,9 +116,9 @@
         </li>
         <li>
           <a
-            href="#"
+            href="payments"
             class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-800"
-            >Cards
+            >Payments
           </a>
         </li>
         <li>

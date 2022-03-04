@@ -119,14 +119,14 @@
         <li>
           <a
             href="#"
-            class="px-2 xl:px-4 py-2 text-gray-600 rounded-md hover:bg-gray-200"
+            class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-800"
             >Cards
           </a>
         </li>
         <li>
           <a
             href="#"
-            class="px-2 xl:px-4 py-2 text-gray-600 rounded-md hover:bg-gray-200"
+            class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-800"
             >Offers</a
           >
         </li>
@@ -137,7 +137,7 @@
             <div class="p-2 rounded hover:bg-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 stroke-current text-gray-800"
+                class="w-4 h-4 stroke-current text-gray-300 hover:text-gray-800 "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -163,7 +163,7 @@
             <div class="p-2 rounded hover:bg-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 stroke-current text-gray-800"
+                class="w-4 h-4 stroke-current text-gray-300 hover:text-gray-800"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -183,10 +183,9 @@
             <div class="p-2 rounded hover:bg-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 stroke-current text-gray-800"
+                class="w-4 h-4 stroke-current text-gray-300 hover:text-gray-800"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
               >
                 <path
                   stroke-linecap="round"
@@ -203,17 +202,17 @@
         <li>
           <a
             href="#"
-            class="text-sm font-sans text-gray-800 font-semibold tracking-wider"
+            class="text-sm font-sans text-gray-200 font-semibold tracking-wider"
           >
             Sahil Patel
           </a>
         </li>
         <li>
           <a href="#">
-            <div class="p-2 rounded hover:bg-gray-200">
+            <div class="p-2 rounded hover:bg-gray-200 transition duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 stroke-current text-gray-800"
+                class="w-5 h-5 stroke-current text-gray-300 hover:text-gray-800"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -237,7 +236,7 @@
         >
           <img class="w-6" src="../../assets/logo-white.png" />
         </div>
-        <p class="text-sm font-light">
+        <p class="text-sm font-light text-gray-300">
           <span class="uppercase"> Dashboard </span>
 
           <span class="text-sm block font-bold tracking-widest">
@@ -325,7 +324,7 @@
               Transactions
             </a>
           </li>
-          <li class="px-4 py-2 rounded hover:bg-gray-200">
+          <li class="px-4 py-2 hover:bg-gray-200 hover:text-gray-800">
             <a href="#" class="flex items-center gap-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-row items-center justify-center">
+  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-300">
     <div class="">
       <div
-        class="flex flex-col rounded items-center justify-center px-16 py-14 sm:shadow-2xl"
+        class="flex flex-col rounded items-center justify-center px-16 py-14 sm:shadow-2xl bg-gray-900"
       >
         <img src="../assets/logo-dark.png" alt="" class="w-32 mt-4" />
         <h2 class="font-serif text-4xl antialiased font-bold">FinoCrunch</h2>
@@ -30,13 +30,13 @@
           <input
             type="email"
             name="email"
-            class="w-64 border-2 p-2 rounded mt-4 focus:border-amber-400"
+            class="w-64 border-2 p-2 rounded mt-4 bg-gray-800 focus:border-amber-400"
             placeholder="Email address or username"
           />
           <input
             type="password"
             name="password"
-            class="w-64 border-2 p-2 rounded mt-1"
+            class="w-64 border-2 p-2 rounded mt-1 bg-gray-800"
             placeholder="Password"
           />
 

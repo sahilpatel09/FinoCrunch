@@ -30,7 +30,7 @@
           <input
             type="email"
             name="email"
-            class="w-64 border-2 p-2 rounded mt-4 bg-gray-800 focus:border-amber-400"
+            class="w-64 border-2 p-2 rounded mt-4 bg-gray-800"
             placeholder="Email address or username"
           />
           <input
@@ -52,7 +52,7 @@
           <span>Remember me for 30 days</span>
         </div>
 
-        <p class="text-black text-sm text-center">
+        <p class="text-black text-sm text-center text-gray-400">
           Don't have an account?
           <br />
           <span class="text-indigo">
@@ -62,12 +62,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <form @submit.prevent="send()" method="get" accept-charset="utf-8">
-    <input type="email" name="" placeholder="Email" v-model="email"><br>
-    <input type="passwords" name="" placeholder="passwords" v-model="password"><br>
-    <input type="submit" name="">  
-    </form> -->
 </template>
 
 <script>

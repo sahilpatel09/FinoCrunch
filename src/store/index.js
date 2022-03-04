@@ -7,11 +7,11 @@ export default createStore({
   },
   mutations: {
     toggleAddTransaction(state) {
-      state.addTransactionOpen = !state.addTransactionOpen
+      state.addTransactionOpen = !state.addTransactionOpen;
     },
     toggleAddCategory(state) {
-      state.addCategoryOpen = !state.addCategoryOpen
-    }
+      state.addCategoryOpen = !state.addCategoryOpen;
+    },
   },
   actions: {},
   modules: {},

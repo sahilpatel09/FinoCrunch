@@ -137,7 +137,7 @@
             <div class="p-2 rounded hover:bg-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 stroke-current text-gray-300 hover:text-gray-800 "
+                class="w-4 h-4 stroke-current text-gray-300 hover:text-gray-800"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

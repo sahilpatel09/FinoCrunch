@@ -95,9 +95,11 @@ export default {
 
 
       try {
+        //redirectTo does not work
         const { user, error } = await supabase.auth.signIn({
           provider: 'google'
-        }, {redirectTo: "https://froagwnelyuxuuksukmr.supabase.co/auth/v1/authorize?provider=google&redirect_to=http://localhost:8080/admin"});
+        },
+            {redirectTo: "/admin"});
 
         if (user) {
           console.log(user);

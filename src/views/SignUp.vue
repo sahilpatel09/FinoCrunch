@@ -37,9 +37,17 @@
           class="flex flex-col"
         >
           <input
+              type="text"
+              name="name"
+              class="w-64 border-2 p-2 rounded mt-4 bg-gray-800"
+              placeholder="Full Name"
+              v-model="user.name"
+          />
+
+          <input
             type="email"
             name="email"
-            class="w-64 border-2 p-2 rounded mt-4 bg-gray-800"
+            class="w-64 border-2 p-2 rounded mt-1 bg-gray-800"
             placeholder="Email address or username"
             v-model="user.email"
           />
@@ -80,6 +88,7 @@ export default {
     return {
       error: "",
       user: {
+        name: "",
         email: "",
         password: "",
       },
@@ -88,10 +97,13 @@ export default {
   methods: {
     async signUp() {
       try {
+
+
         const { user, error } = await supabase.auth.signUp({
           email: this.user.email,
           password: this.user.password,
-        });
+        },{data: { name: this.user.name }} );
+
         if (user) {
           this.$router.push("/login");
           console.log(user);

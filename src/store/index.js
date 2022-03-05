@@ -13,6 +13,10 @@ export default createStore({
     toggleAddCategory(state) {
       state.addCategoryOpen = !state.addCategoryOpen;
     },
+    addUniversalUser(state, user){
+      state.currentUser = user;
+    },
+
   },
   actions: {},
   modules: {},

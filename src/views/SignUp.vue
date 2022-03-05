@@ -90,9 +90,10 @@ export default {
         });
         if(user){
           this.$router.push('/login')
+          console.log(user)
         }
 
-        console.log(user)
+
         if (error) throw error;
       } catch (error) {
         this.error = error.message

@@ -4,6 +4,7 @@ export default createStore({
   state: {
     addTransactionOpen: false,
     addCategoryOpen: false,
+    globaluser: null,
   },
   mutations: {
     toggleAddTransaction(state) {

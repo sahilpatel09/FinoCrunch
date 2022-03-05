@@ -9,6 +9,7 @@
     "format": "yarn prettier --write ."
   },
   "dependencies": {
+    "@supabase/gotrue-js": "^1.22.3",
     "@supabase/supabase-js": "^1.30.7",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",

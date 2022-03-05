@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-full"
+    class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-screen"
   >
     <div class="">
       <div
@@ -13,23 +13,23 @@
         <h4 class="font-semibold my-1">SIGN UP</h4>
         <div class="w-24 h-0.5 bg-indigo-100"></div>
 
-        <button
-          class="mt-4 border-2 border-sky-500 px-8 py-2 flex flex-row items-center gap-2 rounded w-64 md:hover:bg-gray-100 md:ease-in md:duration-300"
-        >
-          <img src="../assets/images/google-18.png" alt="..." />
-          <span>Continue with Google</span>
-        </button>
+<!--        <button-->
+<!--          class="mt-4 border-2 border-sky-500 px-8 py-2 flex flex-row items-center gap-2 rounded w-64 md:hover:bg-gray-100 md:ease-in md:duration-300"-->
+<!--        >-->
+<!--          <img src="../assets/images/google-18.png" alt="..." />-->
+<!--          <span>Continue with Google</span>-->
+<!--        </button>-->
 
         <!--       <button class="mt-1 border-2 border-slate-900 px-8 py-2 flex flex-row items-center gap-2 w-64">
         <img src="https://www.evernote.com/redesign/OpenID/img/apple-logo_20.svg" class="">
         <span>Continue with Apple</span>
       </button> -->
 
-        <div class="flex flex-row gap-x-2 items-center justify-center mt-4">
-          <div class="w-24 h-0.5 bg-indigo-100"></div>
-          <div class="text-sm">or</div>
-          <div class="w-24 h-0.5 bg-indigo-100"></div>
-        </div>
+<!--        <div class="flex flex-row gap-x-2 items-center justify-center mt-4">-->
+<!--          <div class="w-24 h-0.5 bg-indigo-100"></div>-->
+<!--          <div class="text-sm">or</div>-->
+<!--          <div class="w-24 h-0.5 bg-indigo-100"></div>-->
+<!--        </div>-->
         <p class="text-red-400 my-0.5" v-if="error">{{ error }}</p>
         <form
           @submit.prevent="signUp"

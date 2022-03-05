@@ -14,7 +14,7 @@
         <div class="w-24 h-0.5 bg-indigo-100"></div>
         <button
           class="mt-4 border-2 border-sky-500 px-8 py-2 flex flex-row items-center gap-2 rounded w-64 md:hover:bg-gray-100 md:ease-in md:duration-300"
-        >
+        @click="googleSignIn">
           <img src="../assets/images/google-18.png" alt="..." />
           <span>Continue with Google</span>
         </button>
@@ -90,6 +90,35 @@ export default {
     };
   },
   methods: {
+    async googleSignIn(){
+
+
+
+      try {
+        const { user, error } = await supabase.auth.signIn({
+          provider: 'google'
+        }, {redirectTo: "https://froagwnelyuxuuksukmr.supabase.co/auth/v1/authorize?provider=google&redirect_to=http://localhost:8080/admin"});
+
+        if (user) {
+          console.log(user);
+          this.$router.push("/admin");
+        }
+
+        if (error) throw error;
+      } catch (error) {
+        this.error = error.message;
+      }
+
+
+
+
+
+
+
+
+
+
+    },
     async signIn() {
       try {
         const { user, error } = await supabase.auth.signIn({
@@ -98,7 +127,6 @@ export default {
         });
 
         if (user) {
-          this.$store.state.currentUser = user;
           console.log(user);
           this.$router.push("/admin");
         }

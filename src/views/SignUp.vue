@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-screen">
+  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-full">
     <div class="">
       <div
         class="flex flex-col rounded items-center justify-center px-16 py-14 sm:shadow-2xl sm:rounded bg-gray-900"
@@ -7,6 +7,9 @@
         <img src="../assets/logo-dark.png" alt="" class="w-32 mt-4" />
         <h2 class="font-serif text-4xl antialiased font-bold">FinoCrunch</h2>
         <p class="text-md text-slate-50">Record Everything important.</p>
+        <div class="w-24 h-0.5 bg-indigo-100 mt-2"></div>
+        <h4 class="font-semibold my-1">SIGN UP</h4>
+        <div class="w-24 h-0.5 bg-indigo-100"></div>
 
         <button
           class="mt-4 border-2 border-sky-500 px-8 py-2 flex flex-row items-center gap-2 rounded w-64 md:hover:bg-gray-100 md:ease-in md:duration-300"
@@ -25,7 +28,7 @@
           <div class="text-sm">or</div>
           <div class="w-24 h-0.5 bg-indigo-100"></div>
         </div>
-
+        <p class=" text-red-400 my-0.5" v-if="error">{{error}}</p>
         <form @submit.prevent="signUp" accept-charset="utf-8" class="flex flex-col">
           <input
             type="email"
@@ -69,6 +72,7 @@ export default {
   components: {},
   data() {
     return {
+      error: "",
       user: {
         email: "",
         password: "",
@@ -84,12 +88,14 @@ export default {
           email: this.user.email,
           password: this.user.password,
         });
+        if(user){
+          this.$router.push('/login')
+        }
 
         console.log(user)
         if (error) throw error;
       } catch (error) {
-        console.log(error.error_description)
-        console.log(error.message)
+        this.error = error.message
       }
 
     }

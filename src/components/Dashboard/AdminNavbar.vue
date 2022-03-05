@@ -19,7 +19,7 @@
           <a
             href="#"
             class="px-2 xl:px-4 py-2 text-gray-100 rounded-md hover:bg-gray-300 hover:text-gray-800"
-            >My Account</a
+            @click="logit">My Account</a
           >
         </li>
         <li class="relative">
@@ -208,7 +208,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" @click="logout">
             <div class="p-2 rounded hover:bg-gray-200 transition duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -369,14 +369,39 @@
 </template>
 
 <script>
+import {supabase} from "@/supabase/supabase";
+
 export default {
   name: "AdminNavbar",
   data() {
     return {
+      user: this.$store.currentUser,
       txnOpen: true,
       menuOpen: true,
     };
   },
+  methods: {
+    logit(){
+      console.log(this.$store.currentUser)
+    },
+
+    async logout(){
+      try {
+        const { error } = await supabase.auth.signOut();
+        if (error){
+          throw error
+        }else{
+          this.$router.push('/')
+        }
+      }
+      catch(error){
+        console.log(error.message)
+      }
+
+
+    }
+
+  }
 };
 </script>
 

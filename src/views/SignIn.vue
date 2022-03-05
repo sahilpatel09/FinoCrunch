@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-300">
+  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-300 h-screen">
     <div class="">
       <div
         class="flex flex-col rounded items-center justify-center px-16 py-14 sm:shadow-2xl bg-gray-900"

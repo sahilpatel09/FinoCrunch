@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-300 h-full">
+  <div
+    class="flex flex-row items-center justify-center bg-gray-800 text-gray-300 h-full"
+  >
     <div class="">
       <div
         class="flex flex-col rounded items-center justify-center px-16 py-14 sm:shadow-2xl bg-gray-900"
@@ -27,19 +29,25 @@
           <div class="text-sm">or</div>
           <div class="w-24 h-0.5 bg-indigo-100"></div>
         </div>
-
-        <form @submit.prevent="" accept-charset="utf-8" class="flex flex-col">
+        <p class="text-red-400 my-0.5" v-if="error">{{ error }}</p>
+        <form
+          @submit.prevent="signIn"
+          accept-charset="utf-8"
+          class="flex flex-col"
+        >
           <input
             type="email"
             name="email"
             class="w-64 border-2 p-2 rounded mt-4 bg-gray-800"
             placeholder="Email address or username"
+            v-model="user.email"
           />
           <input
             type="password"
             name="password"
             class="w-64 border-2 p-2 rounded mt-1 bg-gray-800"
             placeholder="Password"
+            v-model="user.password"
           />
 
           <button
@@ -67,20 +75,39 @@
 </template>
 
 <script>
+import { supabase } from "@/supabase/supabase";
+
 export default {
   name: "SignIn",
   components: {},
-  methods: {
-    send() {
-      console.log(this.email, this.password);
-    },
-  },
-
   data() {
     return {
-      email: "",
-      password: "",
+      error: "",
+      user: {
+        email: "",
+        password: "",
+      },
     };
+  },
+  methods: {
+    async signIn() {
+      try {
+        const { user, error } = await supabase.auth.signIn({
+          email: this.user.email,
+          password: this.user.password,
+        });
+
+        if (user) {
+          this.$store.state.currentUser = user;
+          console.log(user);
+          this.$router.push("/admin");
+        }
+
+        if (error) throw error;
+      } catch (error) {
+        this.error = error.message;
+      }
+    },
   },
 };
 </script>

@@ -73,7 +73,7 @@ const routes = [
         path: "transactions",
         component: () =>
           import(
-            /* webpackChunkName: "about" */ "../components/Transactions.vue"
+            /* webpackChunkName: "about" */ "../views/innerPages/Transactions.vue"
           ),
       },
 

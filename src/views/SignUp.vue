@@ -26,18 +26,20 @@
           <div class="w-24 h-0.5 bg-indigo-100"></div>
         </div>
 
-        <form @submit.prevent="" accept-charset="utf-8" class="flex flex-col">
+        <form @submit.prevent="signUp" accept-charset="utf-8" class="flex flex-col">
           <input
             type="email"
             name="email"
             class="w-64 border-2 p-2 rounded mt-4 bg-gray-800"
             placeholder="Email address or username"
+            v-model="user.email"
           />
           <input
             type="password"
             name="password"
             class="w-64 border-2 p-2 rounded mt-1 bg-gray-800"
             placeholder="Password"
+            v-model="user.password"
           />
 
           <button
@@ -57,29 +59,42 @@
       </div>
     </div>
   </div>
-
-  <!-- <form @submit.prevent="send()" method="get" accept-charset="utf-8">
-    <input type="email" name="" placeholder="Email" v-model="email"><br>
-    <input type="passwords" name="" placeholder="passwords" v-model="password"><br>
-    <input type="submit" name="">  
-    </form> -->
 </template>
 
 <script>
+import { supabase } from '../supabase/supabase'
+
 export default {
   name: "SignUp",
   components: {},
-  methods: {
-    send() {
-      console.log(this.email, this.password);
-    },
-  },
-
   data() {
     return {
-      email: "",
-      password: "",
+      user: {
+        email: "",
+        password: "",
+      }
     };
   },
+  methods: {
+    async signUp(){
+
+      try {
+
+        const { user, error } = await supabase.auth.signUp({
+          email: this.user.email,
+          password: this.user.password,
+        });
+
+        console.log(user)
+        if (error) throw error;
+      } catch (error) {
+        console.log(error.error_description)
+        console.log(error.message)
+      }
+
+    }
+  },
+
+
 };
 </script>

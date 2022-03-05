@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-full">
+  <div
+    class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-full"
+  >
     <div class="">
       <div
         class="flex flex-col rounded items-center justify-center px-16 py-14 sm:shadow-2xl sm:rounded bg-gray-900"
@@ -28,8 +30,12 @@
           <div class="text-sm">or</div>
           <div class="w-24 h-0.5 bg-indigo-100"></div>
         </div>
-        <p class=" text-red-400 my-0.5" v-if="error">{{error}}</p>
-        <form @submit.prevent="signUp" accept-charset="utf-8" class="flex flex-col">
+        <p class="text-red-400 my-0.5" v-if="error">{{ error }}</p>
+        <form
+          @submit.prevent="signUp"
+          accept-charset="utf-8"
+          class="flex flex-col"
+        >
           <input
             type="email"
             name="email"
@@ -65,7 +71,7 @@
 </template>
 
 <script>
-import { supabase } from '../supabase/supabase'
+import { supabase } from "../supabase/supabase";
 
 export default {
   name: "SignUp",
@@ -76,32 +82,26 @@ export default {
       user: {
         email: "",
         password: "",
-      }
+      },
     };
   },
   methods: {
-    async signUp(){
-
+    async signUp() {
       try {
-
         const { user, error } = await supabase.auth.signUp({
           email: this.user.email,
           password: this.user.password,
         });
-        if(user){
-          this.$router.push('/login')
-          console.log(user)
+        if (user) {
+          this.$router.push("/login");
+          console.log(user);
         }
-
 
         if (error) throw error;
       } catch (error) {
-        this.error = error.message
+        this.error = error.message;
       }
-
-    }
+    },
   },
-
-
 };
 </script>

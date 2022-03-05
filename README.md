@@ -1,22 +1,22 @@
 # FinoCrunch - Simple Expense Manager (Under Construction)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3112870f-66a9-4662-b92f-13bee88d39b1/deploy-status)](https://app.netlify.com/sites/finocrunch/deploys)
 
 ![vuejs](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
 ![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-
-
-FinoCrunch is a simple expense manager theme at the moment. I build the project on my time and in the future I am thinking to add Supabase support to the project. Feel free to contribute to this project if you like. 
+FinoCrunch is a simple expense manager theme at the moment. I build the project on my time and in the future I am thinking to add Supabase support to the project. Feel free to contribute to this project if you like.
 
 ## Routes
-* /
-* /login
-* /register
-* /admin - Redirect to Dashboard
-* /admin/dashboard
-* /admin/transactions
-* /admin/payments
+
+- /
+- /login
+- /register
+- /admin - Redirect to Dashboard
+- /admin/dashboard
+- /admin/transactions
+- /admin/payments
 
 ## Project setup
 
@@ -37,7 +37,6 @@ yarn serve
 ```
 yarn format
 ```
-
 
 ### Compiles and minifies for production
 

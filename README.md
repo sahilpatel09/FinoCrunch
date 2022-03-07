@@ -20,7 +20,7 @@ FinoCrunch is a simple expense manager theme at the moment. I build the project 
 
 ## Images
 
-####Login page
+#### Login page
 
 ![loginPage](https://res.cloudinary.com/sahil-patel/image/upload/v1646670329/finocrunch/login_lapvoa.png)
 

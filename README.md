@@ -18,6 +18,19 @@ FinoCrunch is a simple expense manager theme at the moment. I build the project 
 - /admin/transactions
 - /admin/payments
 
+## Images
+
+####Login page
+
+![loginPage](https://res.cloudinary.com/sahil-patel/image/upload/v1646670329/finocrunch/login_lapvoa.png)
+
+#### Register Page
+
+![Register Page](https://res.cloudinary.com/sahil-patel/image/upload/v1646670330/finocrunch/register_cxdbum.png)
+
+#### Dashboard
+![Dashboard](https://res.cloudinary.com/sahil-patel/image/upload/v1646670332/finocrunch/dash_pbqsnv.png)
+
 ## Project setup
 
 ```

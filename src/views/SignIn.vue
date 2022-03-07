@@ -1,6 +1,12 @@
 <template>
-  <div
-      class="flex flex-row items-center justify-center bg-gray-800 text-gray-300 h-full"
+  <div v-if="loadingLoader">
+    <Loader />
+  </div>
+  <div v-else-if="loadingRedirect">
+    <RedirectLoader />
+  </div>
+  <div v-else
+      class="flex flex-row items-center justify-center bg-gray-800 text-gray-300 h-full fade-in"
   >
     <div class="">
       <div
@@ -76,26 +82,49 @@
 
 <script>
 import {supabase} from "@/supabase/supabase";
+import Loader from "@/components/Loader";
+import RedirectLoader from "@/components/RedirectLoader";
 
 export default {
   name: "SignIn",
-  components: {},
+  components: {RedirectLoader, Loader},
   data() {
     return {
       error: "",
+      loadingLoader: true,
+      loadingRedirect: false,
       user: {
         email: "",
         password: "",
       },
     };
   },
+  mounted() {
+
+    setTimeout(() => {
+
+      const user = supabase.auth.user();
+      if(user){
+        this.$store.currentUser = user
+        this.loadingLoader = false
+        this.loadingRedirect = true
+        setTimeout(()=>{
+          this.$router.push('/admin')
+        },2000);
+
+      }else{
+        this.loadingLoader = false
+        this.loadingRedirect = false
+
+      }
+
+    }, 1500);
+
+
+
+  },
   created() {
-    const user = supabase.auth.user();
-    if(user){
-      this.$store.currentUser = user
-      // this.$store.commit('addUniversalUser', user.email);
-      this.$router.push('/admin')
-    }
+
   }
   ,
   methods: {
@@ -127,6 +156,10 @@ export default {
 
         if (user) {
           console.log(user);
+
+          this.loadingLoader = false
+          this.loadingRedirect = true
+
           this.$router.push("/admin");
         }
 

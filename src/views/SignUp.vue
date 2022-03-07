@@ -1,6 +1,12 @@
 <template>
-  <div
-    class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-screen"
+  <div v-if="loadingLoader">
+    <Loader />
+  </div>
+  <div v-else-if="loadingRedirect">
+    <RedirectLoader />
+  </div>
+  <div v-else
+    class="flex flex-row items-center justify-center bg-gray-800 text-gray-100 h-screen fade-in"
   >
     <div class="">
       <div
@@ -80,13 +86,17 @@
 
 <script>
 import { supabase } from "../supabase/supabase";
+import Loader from "@/components/Loader";
+import RedirectLoader from "@/components/RedirectLoader";
 
 export default {
   name: "SignUp",
-  components: {},
+  components: {RedirectLoader, Loader},
   data() {
     return {
       error: "",
+      loadingLoader: true,
+      loadingRedirect: false,
       user: {
         name: "",
         email: "",
@@ -94,6 +104,31 @@ export default {
       },
     };
   },
+  mounted() {
+
+    setTimeout(() => {
+
+      const user = supabase.auth.user();
+      if(user){
+        this.$store.currentUser = user
+        this.loadingLoader = false
+        this.loadingRedirect = true
+        setTimeout(()=>{
+          this.$router.push('/admin')
+        },2000);
+
+      }else{
+        this.loadingLoader = false
+        this.loadingRedirect = false
+
+      }
+
+    }, 1500);
+
+
+
+  }
+  ,
   created() {
     const user = supabase.auth.user();
     if(user){

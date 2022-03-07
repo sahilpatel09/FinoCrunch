@@ -4,7 +4,7 @@ export default createStore({
   state: {
     addTransactionOpen: false,
     addCategoryOpen: false,
-    currentUser: null,
+    currentUser: "",
   },
   mutations: {
     toggleAddTransaction(state) {
@@ -15,6 +15,7 @@ export default createStore({
     },
     addUniversalUser(state, user){
       state.currentUser = user;
+
     },
 
   },

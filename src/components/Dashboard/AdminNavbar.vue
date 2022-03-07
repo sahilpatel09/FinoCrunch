@@ -204,7 +204,7 @@
             href="#"
             class="text-sm font-sans text-gray-200 font-semibold tracking-wider"
           >
-            Sahil Patel
+            {{ name }}
           </a>
         </li>
         <li>
@@ -379,6 +379,9 @@ export default {
       txnOpen: true,
       menuOpen: true,
     };
+  },
+  props: {
+    name: String,
   },
   methods: {
     logit(){

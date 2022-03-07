@@ -1,9 +1,8 @@
 <template>
   <div v-if="loading" class="relative antialiased bg-gray-800">
-    <navbar />
+    <navbar :name="user.user_metadata.name"/>
     <router-view />
   </div>
-
   <Spinner v-else/>
 </template>
 <script>
@@ -14,7 +13,12 @@ export default {
   name: "Home",
   data() {
     return{
-      loading: true,
+      loading: false,
+      user: this.$store.currentUser
+    }
+  },created() {
+    if(this.$store.currentUser){
+      this.loading = true
     }
   },
   components: {

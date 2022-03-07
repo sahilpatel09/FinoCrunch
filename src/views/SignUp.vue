@@ -97,6 +97,7 @@ export default {
   created() {
     const user = supabase.auth.user();
     if(user){
+      this.$store.commit('addUniversalUser', user);
       this.$router.push('/admin')
     }
   }

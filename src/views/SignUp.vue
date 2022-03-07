@@ -139,8 +139,8 @@ export default {
   ,
   methods: {
     async signUp() {
+      this.loadingLoader = true
       try {
-
 
         const { user, error } = await supabase.auth.signUp({
           email: this.user.email,
@@ -148,12 +148,19 @@ export default {
         },{data: { name: this.user.name }} );
 
         if (user) {
-          this.$router.push("/login");
           console.log(user);
+          this.loadingLoader = false
+          this.loadingRedirect = true
+
+          setTimeout(()=>{
+            this.$router.push('/admin')
+          },2000);
+
         }
 
         if (error) throw error;
       } catch (error) {
+        this.loadingLoader = false
         this.error = error.message;
       }
     },

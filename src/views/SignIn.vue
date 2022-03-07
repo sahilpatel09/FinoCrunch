@@ -108,6 +108,7 @@ export default {
         this.$store.currentUser = user
         this.loadingLoader = false
         this.loadingRedirect = true
+
         setTimeout(()=>{
           this.$router.push('/admin')
         },2000);
@@ -118,7 +119,7 @@ export default {
 
       }
 
-    }, 1500);
+    }, 1000);
 
 
 
@@ -148,6 +149,7 @@ export default {
 
     },
     async signIn() {
+      this.loadingLoader = true
       try {
         const {user, error} = await supabase.auth.signIn({
           email: this.user.email,
@@ -156,15 +158,18 @@ export default {
 
         if (user) {
           console.log(user);
-
           this.loadingLoader = false
           this.loadingRedirect = true
 
-          this.$router.push("/admin");
+          setTimeout(()=>{
+            this.$router.push('/admin')
+          },2000);
+
         }
 
         if (error) throw error;
       } catch (error) {
+        this.loadingLoader = false
         this.error = error.message;
       }
     },

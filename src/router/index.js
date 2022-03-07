@@ -81,33 +81,16 @@ const routes = [
         path: "payments",
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/Payments.vue"),
+        meta : {
+          authRequired: true,
+        }
       },
+
     ],
   },
 
-  // {
-  //   path: "/admin",
-  //   redirect: "/admin/dashboard",
-  //   component: Admin,
-  //   children: [
-  //     {
-  //       path: "/admin/dashboard",
-  //       component: Dashboard,
-  //     },
-  //     {
-  //       path: "/admin/settings",
-  //       component: Settings,
-  //     },
-  //     {
-  //       path: "/admin/tables",
-  //       component: Tables,
-  //     },
-  //     {
-  //       path: "/admin/maps",
-  //       component: Maps,
-  //     },
-  //   ],
-  // },
+
+
 
   {
     path: "/:pathMatch(.*)*",
@@ -123,5 +106,31 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+
+// import { supabase } from "@/supabase/supabase";
+//
+// router.beforeEach((to, from, next) => {
+//   if(to.meta.authRequired){
+//     console.log("Hello there before user")
+//     const user = supabase.auth.user();
+//     if(user){
+//       console.log("Hello there")
+//       next();
+//     }else{
+//       this.$router.push('/register');
+//     }
+//
+//
+//
+//   }
+//
+// });
+
+
+
+
+
+
 
 export default router;

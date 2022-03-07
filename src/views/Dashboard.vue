@@ -1,34 +1,33 @@
 <template>
-  <div v-if="loading" class="relative antialiased bg-gray-800 in-down">
-    <navbar name="user"/>
+<!--  <Spinner v-if="loading"/>-->
+  <div class="relative antialiased bg-gray-800 in-down">
+    <navbar name="this.$store.currentUser.name"/>
     <router-view />
   </div>
-  <Spinner v-else/>
 </template>
 <script>
 // import MainScreen from '../components/MainScreen.vue';
 import navbar from "../components/Dashboard/AdminNavbar.vue";
-import Spinner from "@/components/Loader";
+//import Spinner from "@/components/Loader";
+//import {supabase} from "@/supabase/supabase";
 export default {
   name: "Home",
   data() {
     return{
-      loading: true,
-      user: this.$store.currentUser
-    }
-  },
-  beforeCreate() {
-    console.log(this.$store.currentUser)
-    if(this.$store.currentUser){
-      this.loading = true
+      //loading: false,
+      user: null,
     }
   },
   created() {
+    // this.user = this.$store.currentUser
+    // if(this.user){
+    //   this.loading = false
+    // }
+  }
 
-
-  },
+,
   components: {
-    Spinner,
+    //Spinner,
     // sidebar,
     navbar,
   },

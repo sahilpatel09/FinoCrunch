@@ -1,4 +1,4 @@
-# FinoCrunch - Simple Expense Manager (Under Construction)
+# FinoCrunch - Simple Expense Manager Design(Archived)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3112870f-66a9-4662-b92f-13bee88d39b1/deploy-status)](https://app.netlify.com/sites/finocrunch/deploys)
 
@@ -39,32 +39,3 @@ cd finocrunch
 yarn install OR npm i
 ```
 
-### Compiles and hot-reloads for development
-
-```
-yarn serve
-```
-
-### Format code with Prettier
-
-```
-yarn format
-```
-
-### Compiles and minifies for production
-
-```
-yarn build
-```
-
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-![Built With Love](http://ForTheBadge.com/images/badges/built-with-love.svg)
